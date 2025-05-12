@@ -1,26 +1,101 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --breakpoint-xxs: 375px;
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1440px;
+
+  --max-width-base: 77.75rem;
+
+  --font-roboto: var(--font-roboto);
+
+  --color-brand-dark-blue: #000f27;
+  --color-brand-dark-blue-100: #001537cc;
+  --color-brand-dark-blue-200: #282828;
+  --color-brand-gray: #f1f0fc;
+  --color-brand-purple: #763edb;
+
+  --background-image-btn: linear-gradient(302.62deg, #763edb 0%, #0058e6 100%);
+  --background-image-nav: blur(40px), 4px 4px 12px 0px #ffffff1f inset;
+  --background-image-hero: linear-gradient(
+    302.62deg,
+    #763edb 32.04%,
+    #0058e6 100%
+  );
+  --background-image-mob-app: linear-gradient(
+    6.31deg,
+    #0058e6 4.82%,
+    #763edb 94.79%
+  );
+
+  --shadow-tab: inset 4px 4px 8px 0px #ffffff0a,
+    inset -4px -4px 8px 0px #ffffff0a;
+
+  --shadow-banner: 0px 0px 32px 0px #287edb52;
+  --shadow-feature: 0px 4px 12px 0px #0000002e;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  body {
+    @apply font-roboto tracking-tight;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  nav {
+    box-shadow: inset 4px 4px 12px 0 rgba(255, 255, 255, 0.12);
+  }
+
+  h2 {
+    @apply text-center text-white text-[40px]/[44px] lg:text-6xl/[60px];
+  }
+
+  h3 {
+    @apply text-2xl/7 lg:text-[32px]/9;
+  }
+
+  h4 {
+    @apply text-2xl/6 lg:text-[32px]/0;
+  }
+
+  h5 {
+    @apply text-xl/6 lg:text-[28px]/9;
+  }
+
+  section {
+    @apply pb-28 lg:pb-32;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@utility flex-between {
+  @apply flex items-center justify-between;
+}
+
+@utility flex-center {
+  @apply flex items-center justify-center;
+}
+
+@utility smooth-200 {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-slider {
+  animation: slide linear infinite;
+}
+
+.integration-block {
+  backdrop-filter: blur(60px);
+  box-shadow: 4px 4px 8px 0px #ffffff0a inset;
+  box-shadow: -4px -4px 8px 0px #ffffff0a inset;
 }
