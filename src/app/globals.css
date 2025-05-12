@@ -31,6 +31,11 @@
     #0058e6 4.82%,
     #763edb 94.79%
   );
+  --background-image-reliable: linear-gradient(
+    271.05deg,
+    #0058e6 0%,
+    #763edb 100%
+  );
 
   --shadow-tab: inset 4px 4px 8px 0px #ffffff0a,
     inset -4px -4px 8px 0px #ffffff0a;

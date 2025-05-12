@@ -396,6 +396,7 @@ interface Tab {
   id: number;
   icon: ComponentType<SVGProps<SVGSVGElement>>;
   iconStyle: "stroke" | "fill";
+  label: string;
 }
 
 export default function Choose() {
