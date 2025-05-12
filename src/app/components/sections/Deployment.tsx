@@ -23,7 +23,7 @@ export default function Deployment() {
 
             <div className="flex-1 space-y-4 bg-white px-3.5 py-5 sm:p-6">
               <h3>В облаке</h3>
-              <p className="font-light text-xl/7">
+              <p className="font-light leading-5.5 text-xl/7">
                 Используйте Мираполис Таланты как сервис - простой, быстрый и
                 удобный способ работы с системой, - мы полностью позаботимся о
                 безопасности ваших данных и обеспечим доступность системы для
@@ -46,7 +46,7 @@ export default function Deployment() {
 
             <div className="flex-1 space-y-4 bg-white px-3.5 py-5 sm:p-6">
               <h3>На сервере</h3>
-              <p className="font-light text-xl/7">
+              <p className="font-light leading-5.5 text-xl/7">
                 Мираполис Таланты в «коробке» - это копия облачной версии
                 Мираполис Таланты, с которой можно работать на своём сервере.
                 Система включает в себя все необходимые сервисы для цифровизации
@@ -56,9 +56,11 @@ export default function Deployment() {
           </div>
         </div>
 
-        <Button variant="gradient" className="hidden lg:block mx-auto mt-10">
-          Перезвоните мне
-        </Button>
+        <div className="flex-center">
+          <Button variant="gradient" className="w-full sm:w-auto">
+            Перезвоните мне
+          </Button>
+        </div>
       </div>
     </section>
   );

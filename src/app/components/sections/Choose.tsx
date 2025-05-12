@@ -540,7 +540,7 @@ export default function Choose() {
                   </div>
                   <div className="px-3.5 pt-3.5 pb-5">
                     <h3 className="text-xl leading-6 mb-3.5">{tab.title}</h3>
-                    <ul className="leading-[22px] font-light">
+                    <ul className="leading-5.5 font-light">
                       {tab.features.map((f, i) => (
                         <li key={i} className="flex items-start pl-2">
                           <span className="mr-2 mt-1.5">•</span>

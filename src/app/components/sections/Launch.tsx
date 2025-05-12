@@ -25,7 +25,7 @@ export default function Launch() {
             <h3 className="text-brand-purple">
               Без привлечения IT-специалистов
             </h3>
-            <p className="font-light leading-[22px] lg:text-xl/7">
+            <p className="font-light leading-5.5 lg:text-xl/7">
               Мы возьмем на себе всю головную боль на этапе запуска системы,
               поможем с настройкой под ваши процессы и началом работы; готовые
               сценарии работы позволят вам запуститься в короткие сроки без

@@ -36,6 +36,11 @@
     #0058e6 0%,
     #763edb 100%
   );
+  --background-image-success-story: linear-gradient(
+    6.31deg,
+    #0058e6 4.82%,
+    #763edb 94.79%
+  );
 
   --shadow-tab: inset 4px 4px 8px 0px #ffffff0a,
     inset -4px -4px 8px 0px #ffffff0a;
@@ -66,7 +71,7 @@
   }
 
   h4 {
-    @apply text-2xl/6 lg:text-[32px]/0;
+    @apply text-2xl/6 lg:text-[32px]/9;
   }
 
   h5 {

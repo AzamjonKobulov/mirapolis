@@ -26,7 +26,7 @@ export default function MobileApp() {
           <div className="space-y-3 text-white">
             <h2 className="text-start">Мобильное приложение</h2>
             <h3>И мобильная адаптация</h3>
-            <p className="opacity-90 font-light leading-[22px] lg:text-xl/7">
+            <p className="opacity-90 font-light leading-5.5 lg:text-xl/7">
               Возможность работать со всеми необходимыми функциям и материалам
               системы из любой точки, дайте своим сотрудникам больше
               мобильности.
