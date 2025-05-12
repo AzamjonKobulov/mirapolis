@@ -131,7 +131,7 @@ export default function SuccessStories() {
 
         {/* Slides */}
         <Swiper
-          navigation={(true, { nextEl: ".next", prevEl: ".prev" })}
+          navigation={{ nextEl: ".next", prevEl: ".prev" }}
           loop={true}
           modules={[Navigation]}
           className="mySwiper"
