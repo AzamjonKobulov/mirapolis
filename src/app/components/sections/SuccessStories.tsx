@@ -10,7 +10,6 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Navigation } from "swiper/modules";
-import next from "next";
 
 type Stat = {
   title: string;
