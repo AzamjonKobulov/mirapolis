@@ -391,15 +391,21 @@ const tabs: {
   },
 ];
 
-interface Tab {
+interface TabHeader {
   id: number;
   icon: (props: { className: string }) => ReactNode;
   iconStyle: "stroke" | "fill";
   label: string;
+}
+
+interface TabContent {
+  id: number;
   title: string;
   features: string[];
   images: string[];
 }
+
+interface Tab extends TabHeader, TabContent {}
 
 export default function Choose() {
   const [activeTab, setActiveTab] = useState(1);
@@ -435,9 +441,7 @@ export default function Choose() {
     return <Icon className={`${baseClass} ${colorClass}`} />;
   };
 
-  const renderTabButton = (
-    tab: Pick<Tab, "id" | "icon" | "iconStyle" | "label">
-  ) => {
+  const renderTabButton = (tab: TabHeader) => {
     const isActive = activeTab === tab.id;
     return (
       <Button
