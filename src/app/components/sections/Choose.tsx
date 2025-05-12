@@ -1,21 +1,22 @@
 "use client";
 
-import { ReactNode, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 
 import Button from "../shared/Button";
 import { ChevronDown } from "lucide-react";
 
-// Define tab data
-const tabs: {
+type Tab = {
   id: number;
-  icon: (props: { className: string }) => ReactNode;
-  iconStyle: string;
+  icon: React.ComponentType<{ className: string }>;
+  iconStyle: "stroke" | "fill";
   label: string;
   title: string;
   features: string[];
   images: string[];
-}[] = [
+};
+
+const tabs: Tab[] = [
   {
     id: 1,
     icon: ({ className }: { className: string }) => (
@@ -391,22 +392,6 @@ const tabs: {
   },
 ];
 
-interface TabHeader {
-  id: number;
-  icon: (props: { className: string }) => ReactNode;
-  iconStyle: "stroke" | "fill";
-  label: string;
-}
-
-interface TabContent {
-  id: number;
-  title: string;
-  features: string[];
-  images: string[];
-}
-
-interface Tab extends TabHeader, TabContent {}
-
 export default function Choose() {
   const [activeTab, setActiveTab] = useState(1);
 
@@ -420,42 +405,20 @@ export default function Choose() {
     const isActive = activeTab === tab.id;
     const baseClass = "size-[17.5px] lg:w-5";
 
-    const isStroke = tab.iconStyle === "stroke";
-    let colorClass = "";
-
-    if (isStroke) {
-      colorClass = isMobile
+    const colorClass = isMobile
+      ? tab.iconStyle === "stroke"
         ? "stroke-brand-dark-blue group-hover:stroke-brand-dark-blue"
-        : isActive
+        : "fill-brand-dark-blue group-hover:fill-brand-dark-blue"
+      : isActive
+      ? tab.iconStyle === "stroke"
         ? "stroke-brand-dark-blue"
-        : "stroke-white group-hover:stroke-brand-dark-blue";
-    } else {
-      colorClass = isMobile
-        ? "fill-brand-dark-blue group-hover:fill-brand-dark-blue"
-        : isActive
-        ? "fill-brand-dark-blue"
-        : "fill-white group-hover:fill-brand-dark-blue";
-    }
+        : "fill-brand-dark-blue"
+      : tab.iconStyle === "stroke"
+      ? "stroke-white group-hover:stroke-brand-dark-blue"
+      : "fill-white group-hover:fill-brand-dark-blue";
 
     const Icon = tab.icon;
     return <Icon className={`${baseClass} ${colorClass}`} />;
-  };
-
-  const renderTabButton = (tab: TabHeader) => {
-    const isActive = activeTab === tab.id;
-    return (
-      <Button
-        key={tab.id}
-        variant="tab"
-        className={
-          isActive ? "bg-white !text-brand-dark-blue border-white" : ""
-        }
-        onClick={() => setActiveTab(tab.id)}
-      >
-        {renderIcon(tab, false)}
-        <span>{tab.label}</span>
-      </Button>
-    );
   };
 
   return (
@@ -465,29 +428,56 @@ export default function Choose() {
 
         {/* Desktop Tabs */}
         <div className="hidden md:block">
-          {[0, 6].map((start) => (
-            <div
-              key={start}
-              className="flex flex-wrap justify-center gap-3 mb-3"
-            >
-              {tabs.slice(start, start + 6).map((tab) => renderTabButton(tab))}
-            </div>
-          ))}
+          <div className="flex flex-wrap justify-center gap-3 mb-3">
+            {tabs.slice(0, 6).map((tab) => (
+              <Button
+                key={tab.id}
+                variant="tab"
+                className={
+                  activeTab === tab.id
+                    ? "bg-white !text-brand-dark-blue border-white"
+                    : ""
+                }
+                onClick={() => setActiveTab(tab.id)}
+              >
+                {renderIcon(tab)}
+                <span>{tab.label}</span>
+              </Button>
+            ))}
+          </div>
+          <div className="flex flex-wrap justify-center gap-3 mb-3">
+            {tabs.slice(6).map((tab) => (
+              <Button
+                key={tab.id}
+                variant="tab"
+                className={
+                  activeTab === tab.id
+                    ? "bg-white !text-brand-dark-blue border-white"
+                    : ""
+                }
+                onClick={() => setActiveTab(tab.id)}
+              >
+                {renderIcon(tab)}
+                <span>{tab.label}</span>
+              </Button>
+            ))}
+          </div>
 
           {activeTabContent && (
-            <div className="bg-white rounded-3xl p-4 flex flex-col lg:flex-row mt-8 lg:mt-10 transition-opacity duration-500 ease-in-out opacity-100">
-              {/* Text */}
+            <div className="bg-white rounded-3xl p-4 flex flex-col lg:flex-row mt-8 lg:mt-10">
               <div className="lg:w-1/2 space-y-7 p-4">
-                <h5 className="smooth-200">{activeTabContent.title}</h5>
+                <h5>{activeTabContent.title}</h5>
                 <ul className="text-xl font-light">
                   {activeTabContent.features.map((text, i) => (
-                    <BulletPoint key={i} text={text} />
+                    <li key={i} className="flex items-start pl-2">
+                      <span className="mr-2 mt-1.5">•</span>
+                      <span>{text}</span>
+                    </li>
                   ))}
                 </ul>
                 <Button variant="gradient">Попробовать бесплатно</Button>
               </div>
 
-              {/* Images */}
               <div className="lg:w-1/2 lg:mt-0">
                 <div className="relative size-full flex flex-col gap-4">
                   {activeTabContent.images.map((src, idx) => (
@@ -542,7 +532,7 @@ export default function Choose() {
                 >
                   <div className="relative w-full aspect-video border border-brand-gray rounded-lg mb-4">
                     <Image
-                      src={tab.images[0] || "/placeholder.svg"}
+                      src={tab.images[0]}
                       alt={`${tab.label} Screenshots`}
                       fill
                       className="size-full"
@@ -552,7 +542,10 @@ export default function Choose() {
                     <h3 className="text-xl leading-6 mb-3.5">{tab.title}</h3>
                     <ul className="leading-[22px] font-light">
                       {tab.features.map((f, i) => (
-                        <BulletPoint key={i} text={f} />
+                        <li key={i} className="flex items-start pl-2">
+                          <span className="mr-2 mt-1.5">•</span>
+                          <span>{f}</span>
+                        </li>
                       ))}
                     </ul>
                     <Button
@@ -571,10 +564,3 @@ export default function Choose() {
     </section>
   );
 }
-
-const BulletPoint = ({ text }: { text: string }) => (
-  <li className="flex items-start pl-2">
-    <span className="mr-2 mt-1.5">•</span>
-    <span>{text}</span>
-  </li>
-);
