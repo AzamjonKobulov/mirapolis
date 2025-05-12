@@ -48,7 +48,10 @@ export default function Navbar() {
         <ul className="hidden lg:flex items-center gap-3 text-xs xl:text-sm text-brand-dark-blue-100">
           {links.map((link) => (
             <li key={link.label}>
-              <Link href={link.href} className="hover:opacity-50 smooth-200">
+              <Link
+                href={link.href}
+                className="hover:text-brand-purple smooth-200"
+              >
                 {link.label}
               </Link>
             </li>
@@ -59,7 +62,7 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-4">
           <a
             href="tel:+7 (495) 646-04-04"
-            className="text-sm xl:text-base text-brand-dark-blue-200 hover:opacity-50 smooth-200"
+            className="text-sm xl:text-base text-brand-dark-blue-200 hover:text-brand-purple smooth-200"
           >
             +7 (495) 646-04-04
           </a>

@@ -1,5 +1,6 @@
 import Choose from "./components/sections/Choose";
 import Clients from "./components/sections/Clients";
+import Deployment from "./components/sections/Deployment";
 import Hero from "./components/sections/Hero";
 import Integration from "./components/sections/Integration";
 import Launch from "./components/sections/Launch";
@@ -18,6 +19,7 @@ export default function Home() {
       <MobileApp />
       <Launch />
       <Reliable />
+      <Deployment />
     </>
   );
 }

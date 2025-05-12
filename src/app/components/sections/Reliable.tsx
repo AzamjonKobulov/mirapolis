@@ -30,9 +30,9 @@ const features: Feature[] = [
 
 export default function Reliable() {
   return (
-    <section id="reliable">
+    <section id="reliable" className="lg:space-y-10 py-28 lg:py-32">
       <div
-        className="max-w-base mx-auto space-y-8 lg:space-y-10 py-28 lg:py-32
+        className="max-w-base mx-auto space-y-8
        px-3.5"
       >
         <h2>Надежность и безопасность</h2>
