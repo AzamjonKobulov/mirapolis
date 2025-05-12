@@ -1,14 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { ReactNode, useState } from "react";
+import { ComponentType, SVGProps } from "react";
 import Image from "next/image";
+
 import Button from "../shared/Button";
 import { ChevronDown } from "lucide-react";
 
 // Define tab data
 const tabs: {
   id: number;
-  icon: (props: { className: string }) => JSX.Element;
+  icon: (props: { className: string }) => ReactNode;
   iconStyle: string;
   label: string;
   title: string;
@@ -390,6 +392,12 @@ const tabs: {
   },
 ];
 
+interface Tab {
+  id: number;
+  icon: ComponentType<SVGProps<SVGSVGElement>>;
+  iconStyle: "stroke" | "fill";
+}
+
 export default function Choose() {
   const [activeTab, setActiveTab] = useState(1);
 
@@ -399,7 +407,7 @@ export default function Choose() {
 
   const activeTabContent = tabs.find((tab) => tab.id === activeTab);
 
-  const renderIcon = (tab: any, isMobile = false) => {
+  const renderIcon = (tab: Tab, isMobile = false) => {
     const isActive = activeTab === tab.id;
     const baseClass = "size-[17.5px] lg:w-5";
 
@@ -420,10 +428,11 @@ export default function Choose() {
         : "fill-white group-hover:fill-brand-dark-blue";
     }
 
-    return <tab.icon className={`${baseClass} ${colorClass}`} />;
+    const Icon = tab.icon;
+    return <Icon className={`${baseClass} ${colorClass}`} />;
   };
 
-  const renderTabButton = (tab: any) => {
+  const renderTabButton = (tab: Tab) => {
     const isActive = activeTab === tab.id;
     return (
       <Button

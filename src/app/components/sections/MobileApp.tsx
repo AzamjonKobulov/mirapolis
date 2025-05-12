@@ -22,7 +22,7 @@ export default function MobileApp() {
         </div>
 
         {/* Right - Texts */}
-        <div className="max-w-90 space-y-6">
+        <div className="max-w-120 lg:max-w-90 space-y-6">
           <div className="space-y-3 text-white">
             <h2 className="text-start">Мобильное приложение</h2>
             <h3>И мобильная адаптация</h3>

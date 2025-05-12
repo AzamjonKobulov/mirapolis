@@ -53,7 +53,7 @@ export default function ClientSlider() {
   const { mobileRows, desktopRows } = createDistinctRows();
 
   return (
-    <div className="w-full bg-navy-900 py-8 overflow-hidden">
+    <div className="w-full overflow-hidden">
       <div className="container mx-auto px-4 mb-6">
         <div className="text-center">
           <div className="relative inline-block rounded-full text-xs lg:text-sm leading-[14px] lg:leading-4 text-brand-dark-blue border border-white/80 overflow-hidden px-3.5 py-1.5 lg:px-4 lg:py-2">

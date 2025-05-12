@@ -4,6 +4,7 @@ import Hero from "./components/sections/Hero";
 import Integration from "./components/sections/Integration";
 import Launch from "./components/sections/Launch";
 import MobileApp from "./components/sections/MobileApp";
+import Reliable from "./components/sections/Reliable";
 import System from "./components/sections/System";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <Integration />
       <MobileApp />
       <Launch />
+      <Reliable />
     </>
   );
 }
