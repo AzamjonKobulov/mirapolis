@@ -10,23 +10,23 @@ type NavLink = {
 const links: NavLink[] = [
   {
     label: "Возможности",
-    href: "/",
+    href: "#choose",
   },
   {
     label: "Интеграции",
-    href: "/",
+    href: "#integratioin",
   },
   {
     label: "Мобильное приложение",
-    href: "/",
+    href: "#mobile-app",
   },
   {
     label: "Запуск",
-    href: "/",
+    href: "#launch",
   },
   {
     label: "Кейсы клиентов",
-    href: "/",
+    href: "#success",
   },
 ];
 

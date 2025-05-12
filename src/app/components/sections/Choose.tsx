@@ -394,9 +394,12 @@ const tabs: {
 
 interface Tab {
   id: number;
-  icon: ComponentType<SVGProps<SVGSVGElement>>;
+  icon: (props: { className: string }) => ReactNode;
   iconStyle: "stroke" | "fill";
   label: string;
+  title: string;
+  features: string[];
+  images: string[];
 }
 
 export default function Choose() {
@@ -433,7 +436,9 @@ export default function Choose() {
     return <Icon className={`${baseClass} ${colorClass}`} />;
   };
 
-  const renderTabButton = (tab: Tab) => {
+  const renderTabButton = (
+    tab: Pick<Tab, "id" | "icon" | "iconStyle" | "label">
+  ) => {
     const isActive = activeTab === tab.id;
     return (
       <Button
