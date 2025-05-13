@@ -147,8 +147,8 @@ export default function Footer() {
         {/* Right - Form */}
         <ContactModal
           showClose={false}
-          showUserCountSelector={false}
-          showContactMethodSelector={false}
+          showUserCountSelector={true}
+          showContactMethodSelector={true}
         />
       </div>
     </footer>
