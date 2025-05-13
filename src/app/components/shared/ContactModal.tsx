@@ -38,8 +38,9 @@ export default function ContactModal({
     </p>
   ),
 }: ContactModalProps) {
-  const [contactMethod, setContactMethod] = useState<string>("Звонок");
-  const [userCount, setUserCount] = useState<string>("До 100");
+  const [contactMethod, setContactMethod] =
+    useState<string>(initialContactMethod);
+  const [userCount, setUserCount] = useState<string>(initialUserCount);
 
   const [formValues, setFormValues] = useState<FormValues>({
     name: "",
@@ -100,10 +101,8 @@ export default function ContactModal({
 
       {/* Title & Text */}
       <div className="space-y-3">
-        <h3>Попробовать бесплатно</h3>
-        <p>
-          Попробуйте <b>14-дневный бесплатный</b> период.
-        </p>
+        <h3>{modalTitle}</h3>
+        {modalDescription}
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -174,23 +173,32 @@ export default function ContactModal({
         </div>
 
         {/* User Count Option */}
-        <OptionSelector
-          label="Укажите планируемое количество пользователей"
-          options={["До 100", "от 100 до 500", "от 500 до 1000", "Свыше 1000"]}
-          value={userCount}
-          onChange={(val: string) => setUserCount(val)}
-          fullWidthButtons={true}
-          responsive={true}
-        />
+        {showUserCountSelector && (
+          <OptionSelector
+            label="Укажите планируемое количество пользователей"
+            options={[
+              "До 100",
+              "от 100 до 500",
+              "от 500 до 1000",
+              "Свыше 1000",
+            ]}
+            value={userCount}
+            onChange={(val: string) => setUserCount(val)}
+            fullWidthButtons={true}
+            responsive={true}
+          />
+        )}
 
-        <OptionSelector
-          label="Какой способ связи для вас удобнее?"
-          options={["Звонок", "WhatsApp", "Telegram", "Email"]}
-          value={contactMethod}
-          onChange={(val: string) => setContactMethod(val)}
-          fullWidthButtons={false}
-          responsive={false}
-        />
+        {showContactMethodSelector && (
+          <OptionSelector
+            label="Какой способ связи для вас удобнее?"
+            options={["Звонок", "WhatsApp", "Telegram", "Email"]}
+            value={contactMethod}
+            onChange={(val: string) => setContactMethod(val)}
+            fullWidthButtons={false}
+            responsive={false}
+          />
+        )}
 
         <div className="space-y-3 pt-4 xs:pt-5">
           <Button variant="gradient" className="w-full">
