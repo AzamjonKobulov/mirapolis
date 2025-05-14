@@ -2,8 +2,10 @@
 
 import { useState, FormEvent } from "react";
 import OptionSelector from "../OptionSelector";
+import { motion } from "framer-motion";
 import Button from "./Button";
 import { X } from "lucide-react";
+import { useModalsContext } from "@/app/contexts/ModalsContext";
 
 interface FormValues {
   name: string;
@@ -13,7 +15,7 @@ interface FormValues {
   agree: boolean;
 }
 
-interface ContactModalProps {
+interface ContactFormProps {
   showClose?: boolean;
   onClose?: () => void;
   showUserCountSelector?: boolean;
@@ -24,7 +26,7 @@ interface ContactModalProps {
   modalDescription?: React.ReactNode;
 }
 
-export default function ContactModal({
+export default function ContactForm({
   showClose = false,
   onClose,
   showUserCountSelector = true,
@@ -37,7 +39,10 @@ export default function ContactModal({
       Попробуйте <b>14-дневный бесплатный</b> период.
     </p>
   ),
-}: ContactModalProps) {
+}: ContactFormProps) {
+  const { toggleSuccessModal, toggleFreeTrialModal, toggleOrderCallModal } =
+    useModalsContext();
+
   const [contactMethod, setContactMethod] =
     useState<string>(initialContactMethod);
   const [userCount, setUserCount] = useState<string>(initialUserCount);
@@ -74,8 +79,15 @@ export default function ContactModal({
 
     if (Object.values(errors).some(Boolean)) return;
 
-    // Submit logic here
+    // ✅ Validation passed
     console.log("Form submitted:", formValues);
+    toggleSuccessModal();
+
+    if (showUserCountSelector) {
+      toggleFreeTrialModal();
+    } else {
+      toggleOrderCallModal();
+    }
   };
 
   const getError = (field: keyof FormValues): boolean => {
@@ -87,7 +99,15 @@ export default function ContactModal({
   };
 
   return (
-    <div className="relative sm:w-2/3 lg:max-w-[608px] bg-white rounded-[20px] text-brand-dark-blue space-y-7 px-3.5 py-8 lg:px-8">
+    <motion.div
+      initial={{ y: 20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: 20, opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      className={`relative sm:w-2/3 ${
+        showUserCountSelector ? "lg:max-w-[608px]" : "lg:max-w-[540px]"
+      } bg-white size-full xs:size-auto xs:rounded-[20px] text-brand-dark-blue space-y-7 overflow-auto  px-3.5 py-8 lg:px-8`}
+    >
       {/* Close button */}
       {showClose && (
         <button
@@ -202,7 +222,7 @@ export default function ContactModal({
 
         <div className="space-y-3 pt-4 xs:pt-5">
           <Button variant="gradient" className="w-full">
-            Запросить доступ
+            {showUserCountSelector ? "Запросить доступ" : "Отправить заявку"}
           </Button>
 
           <div className="space-y-3.5 xs:space-y-3 text-sm/4 xs:text-base/5 text-brand-dark-blue/80">
@@ -271,6 +291,6 @@ export default function ContactModal({
           </div>
         </div>
       </form>
-    </div>
+    </motion.div>
   );
 }

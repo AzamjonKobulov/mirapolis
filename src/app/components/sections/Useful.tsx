@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { ChevronUp } from "lucide-react";
 import Button from "../shared/Button";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
+import { useModalsContext } from "@/app/contexts/ModalsContext";
 
 interface FeatureBlockProps {
   icon: () => React.ReactNode;
@@ -73,6 +74,8 @@ const FeatureBlock = ({
 };
 
 export default function Useful() {
+  const { toggleFreeTrialModal } = useModalsContext();
+
   const features = [
     {
       icon: () => (
@@ -246,7 +249,11 @@ export default function Useful() {
         </div>
 
         <div className="flex-center">
-          <Button variant="gradient" className="w-full sm:w-auto">
+          <Button
+            onClick={toggleFreeTrialModal}
+            variant="white"
+            className="w-full sm:w-auto"
+          >
             Попробовать бесплатно
           </Button>
         </div>

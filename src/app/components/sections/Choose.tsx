@@ -5,6 +5,7 @@ import Image from "next/image";
 
 import Button from "../shared/Button";
 import { ChevronDown } from "lucide-react";
+import { useModalsContext } from "@/app/contexts/ModalsContext";
 
 type Tab = {
   id: number;
@@ -395,6 +396,8 @@ const tabs: Tab[] = [
 export default function Choose() {
   const [activeTab, setActiveTab] = useState(1);
 
+  const { toggleFreeTrialModal } = useModalsContext();
+
   const toggleTab = (tabId: number) => {
     setActiveTab((prev) => (prev === tabId ? 0 : tabId));
   };
@@ -475,7 +478,9 @@ export default function Choose() {
                     </li>
                   ))}
                 </ul>
-                <Button variant="gradient">Попробовать бесплатно</Button>
+                <Button onClick={toggleFreeTrialModal} variant="gradient">
+                  Попробовать бесплатно
+                </Button>
               </div>
 
               <div className="lg:w-1/2 lg:mt-0">
@@ -549,8 +554,9 @@ export default function Choose() {
                       ))}
                     </ul>
                     <Button
-                      variant="gradient"
-                      className="mt-6 bg-blue-600 w-full"
+                      onClick={toggleFreeTrialModal}
+                      variant="white"
+                      className="w-full sm:w-auto"
                     >
                       Попробовать бесплатно
                     </Button>

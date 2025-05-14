@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Button from "../shared/Button";
+import { useModalsContext } from "@/app/contexts/ModalsContext";
 
 export default function Hero() {
+  const { toggleFreeTrialModal, toggleOrderCallModal } = useModalsContext();
+
   return (
     <section
       id="hero"
@@ -16,10 +21,18 @@ export default function Hero() {
           <h3 className="opacity-80 mt-3">Забота об HR в каждом клике</h3>
           {/* Buttons */}
           <div className="flex-center flex-col xs:flex-row gap-3.5 mt-8">
-            <Button variant="white" className="w-full sm:w-auto">
+            <Button
+              onClick={toggleFreeTrialModal}
+              variant="white"
+              className="w-full sm:w-auto"
+            >
               Попробовать бесплатно
             </Button>
-            <Button variant="outline" className="w-full sm:w-auto">
+            <Button
+              onClick={toggleOrderCallModal}
+              variant="outline"
+              className="w-full sm:w-auto"
+            >
               Заказать консультацию
             </Button>
           </div>

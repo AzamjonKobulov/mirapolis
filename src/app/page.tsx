@@ -1,3 +1,6 @@
+"use client";
+
+import { AnimatePresence } from "framer-motion";
 import Choose from "./components/sections/Choose";
 import Clients from "./components/sections/Clients";
 import Deployment from "./components/sections/Deployment";
@@ -11,7 +14,14 @@ import SuccessStories from "./components/sections/SuccessStories";
 import System from "./components/sections/System";
 import Useful from "./components/sections/Useful";
 
+import { useModalsContext } from "@/app/contexts/ModalsContext";
+import FreeTrialModal from "./components/FreeTrialModal";
+import OrderCallModal from "./components/OrderCallModal";
+import SuccessModal from "./components/SuccessModal";
+
 export default function Home() {
+  const { openFreeTrialModal, openOrderCallModal, openSuccessModal } =
+    useModalsContext();
   return (
     <>
       <Hero />
@@ -26,6 +36,19 @@ export default function Home() {
       <Useful />
       <Stats />
       <SuccessStories />
+
+      {/* Free Trial Modal */}
+      <AnimatePresence>
+        {openFreeTrialModal && <FreeTrialModal />}
+      </AnimatePresence>
+
+      {/* Order A Call Modal */}
+      <AnimatePresence>
+        {openOrderCallModal && <OrderCallModal />}
+      </AnimatePresence>
+
+      {/* Success Modal */}
+      <AnimatePresence>{openSuccessModal && <SuccessModal />}</AnimatePresence>
     </>
   );
 }

@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Button from "../shared/Button";
+import { useModalsContext } from "@/app/contexts/ModalsContext";
 
 export default function Integration() {
+  const { toggleOrderCallModal } = useModalsContext();
+
   return (
     <section id="integration" className="lg:rounded-b-0 pb-9 sm:pb-28 lg:pb-32">
       <div className="max-w-base mx-auto px-3.5">
@@ -67,6 +70,7 @@ export default function Integration() {
         <Button
           variant="gradient"
           className="w-[276px] hidden lg:block mx-auto mt-10"
+          onClick={toggleOrderCallModal}
         >
           Перезвоните мне
         </Button>

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import ContactModal from "../shared/ContactModal";
+import ContactForm from "../shared/ContactForm";
 
 type NavLink = {
   label: string;
@@ -145,7 +145,7 @@ export default function Footer() {
         </div>
 
         {/* Right - Form */}
-        <ContactModal
+        <ContactForm
           showClose={false}
           showUserCountSelector={true}
           showContactMethodSelector={true}

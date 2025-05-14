@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import Button from "../shared/Button";
+import { useModalsContext } from "@/app/contexts/ModalsContext";
 
 type NavLink = {
   label: string;
@@ -31,6 +34,8 @@ const links: NavLink[] = [
 ];
 
 export default function Navbar() {
+  const { toggleFreeTrialModal } = useModalsContext();
+
   return (
     <header className="fixed lg:top-6 left-1/2 z-50 -translate-x-1/2 lg:max-w-base w-full lg:px-3.5">
       <nav className="flex-between bg-white/80 backdrop-blur-2xl border border-white/65 lg:rounded-xl shadow-feature py-2 px-3.5 lg:px-5">
@@ -66,8 +71,11 @@ export default function Navbar() {
           >
             +7 (495) 646-04-04
           </a>
-
-          <Button variant="gradient" className="!text-base !leading-5 !py-3">
+          <Button
+            onClick={toggleFreeTrialModal}
+            variant="gradient"
+            className="!text-base !leading-5 !py-3"
+          >
             Попробовать <span className="hidden xl:inline">бесплатно</span>
           </Button>
         </div>

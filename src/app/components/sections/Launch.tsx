@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Button from "../shared/Button";
+import { useModalsContext } from "@/app/contexts/ModalsContext";
 
 export default function Launch() {
+  const { toggleOrderCallModal } = useModalsContext();
+
   return (
     <section
       id="launch"
@@ -32,7 +35,11 @@ export default function Launch() {
               привлечения своих ИТ-специалистов.
             </p>
           </div>
-          <Button variant="gradient" className="w-full sm:w-[276px]">
+          <Button
+            onClick={toggleOrderCallModal}
+            variant="gradient"
+            className="w-full sm:w-[276px]"
+          >
             Перезвоните мне
           </Button>
         </div>

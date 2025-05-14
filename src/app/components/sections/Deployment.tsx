@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Button from "../shared/Button";
+import { useModalsContext } from "@/app/contexts/ModalsContext";
 
 export default function Deployment() {
+  const { toggleOrderCallModal } = useModalsContext();
+
   return (
     <section id="deployment">
       <div className="max-w-base mx-auto space-y-8 lg:space-y-10 px-3.5">
@@ -57,7 +60,11 @@ export default function Deployment() {
         </div>
 
         <div className="flex-center">
-          <Button variant="gradient" className="w-full sm:w-auto">
+          <Button
+            onClick={toggleOrderCallModal}
+            variant="gradient"
+            className="w-full sm:w-auto"
+          >
             Перезвоните мне
           </Button>
         </div>

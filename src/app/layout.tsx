@@ -5,6 +5,7 @@ import "./globals.css";
 
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+import { ModalsContextProvider } from "./contexts/ModalsContext";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -22,12 +23,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${roboto.variable} bg-brand-dark-blue antialiased`}>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-      </body>
-    </html>
+    <ModalsContextProvider>
+      <html lang="en">
+        <body className={`${roboto.variable} bg-brand-dark-blue antialiased`}>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </body>
+      </html>
+    </ModalsContextProvider>
   );
 }

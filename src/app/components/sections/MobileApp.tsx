@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Button from "../shared/Button";
+import { useModalsContext } from "@/app/contexts/ModalsContext";
 
 export default function MobileApp() {
+  const { toggleFreeTrialModal } = useModalsContext();
+
   return (
     <section
       id="mobile-app"
@@ -32,7 +35,11 @@ export default function MobileApp() {
               мобильности.
             </p>
           </div>
-          <Button variant="white" className="w-full">
+          <Button
+            onClick={toggleFreeTrialModal}
+            variant="white"
+            className="w-full sm:w-auto"
+          >
             Попробовать бесплатно
           </Button>
         </div>
