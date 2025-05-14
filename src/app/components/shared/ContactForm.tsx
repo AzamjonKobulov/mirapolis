@@ -105,8 +105,10 @@ export default function ContactForm({
       exit={{ y: 20, opacity: 0 }}
       transition={{ duration: 0.2 }}
       className={`relative sm:w-2/3 ${
+        showClose ? "xs:rounded-[20px]" : "rounded-[20px]"
+      } ${
         showUserCountSelector ? "lg:max-w-[608px]" : "lg:max-w-[540px]"
-      } bg-white size-full xs:size-auto xs:rounded-[20px] text-brand-dark-blue space-y-7 overflow-auto  px-3.5 py-8 lg:px-8`}
+      } bg-white size-full xs:size-auto  text-brand-dark-blue space-y-7 overflow-auto  px-3.5 py-8 lg:px-8`}
     >
       {/* Close button */}
       {showClose && (
