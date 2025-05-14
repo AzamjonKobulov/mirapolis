@@ -227,7 +227,7 @@ export default function SuccessStories() {
         {/* Navigation Buttons */}
         <div className="flex-center gap-8">
           {/* Next */}
-          <button className="next size-14 shrink flex-center bg-white rounded-2xl hover:opacity-80 smooth-200 cursor-pointer">
+          <button className="prev size-14 shrink flex-center bg-white rounded-2xl hover:opacity-80 smooth-200 cursor-pointer">
             <svg
               width="24"
               height="25"
@@ -244,7 +244,7 @@ export default function SuccessStories() {
             </svg>
           </button>
           {/* Prev */}
-          <button className="prev size-14 shrink flex-center bg-white rounded-2xl hover:opacity-80 smooth-200 cursor-pointer">
+          <button className="next size-14 shrink flex-center bg-white rounded-2xl hover:opacity-80 smooth-200 cursor-pointer">
             <svg
               width="24"
               height="24"
