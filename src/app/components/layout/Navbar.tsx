@@ -4,6 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import Button from "../shared/Button";
 import { useModalsContext } from "@/app/contexts/ModalsContext";
+import MobileMenu from "@/app/MobileMenu";
+import { AnimatePresence } from "framer-motion";
+import { useState } from "react";
 
 type NavLink = {
   label: string;
@@ -34,6 +37,7 @@ const links: NavLink[] = [
 ];
 
 export default function Navbar() {
+  const [openMenu, setOpenMenu] = useState<boolean>(false);
   const { toggleFreeTrialModal } = useModalsContext();
 
   return (
@@ -81,14 +85,21 @@ export default function Navbar() {
         </div>
 
         {/* Mob Menu Btn */}
-        <button className="lg:hidden group hover:bg-brand-dark-blue smooth-200 cursor-pointer rounded-lg p-1">
+        <button
+          onClick={() => setOpenMenu((open) => !open)}
+          className={`lg:hidden group ${
+            openMenu ? "bg-brand-dark-blue" : ""
+          } hover:bg-brand-dark-blue smooth-200 cursor-pointer rounded-lg p-1`}
+        >
           <svg
             width="25"
             height="24"
             viewBox="0 0 25 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="fill-brand-dark-blue/60 group-hover:fill-white smooth-200"
+            className={`${
+              openMenu ? "fill-white" : "fill-brand-dark-blue/60"
+            } group-hover:fill-white smooth-200`}
           >
             <path
               fillRule="evenodd"
@@ -98,6 +109,9 @@ export default function Navbar() {
           </svg>
         </button>
       </nav>
+
+      {/* Mob Menu */}
+      <AnimatePresence>{openMenu && <MobileMenu />}</AnimatePresence>
     </header>
   );
 }

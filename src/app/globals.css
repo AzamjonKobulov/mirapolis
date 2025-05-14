@@ -48,6 +48,9 @@
   --shadow-tab: inset 4px 4px 8px 0px #ffffff0a,
     inset -4px -4px 8px 0px #ffffff0a;
 
+  --shadow-menu: 2px 2px 12px 0px #ffffff99 inset,
+    -2px -2px 12px 0px #ffffff99 inset, 0px 4px 12px 0px #0000001f;
+
   --shadow-banner: 0px 0px 32px 0px #287edb52;
   --shadow-feature: 0px 4px 12px 0px #0000002e;
   --shadow-select: 1px 1px 4px 0px #0000001f;
