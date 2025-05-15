@@ -20,7 +20,7 @@ const links: NavLink[] = [
   },
   {
     label: "Интеграции",
-    href: "#integratioin",
+    href: "#integration",
   },
   {
     label: "Мобильное приложение",
@@ -32,7 +32,7 @@ const links: NavLink[] = [
   },
   {
     label: "Кейсы клиентов",
-    href: "#success",
+    href: "#success-stories",
   },
 ];
 
