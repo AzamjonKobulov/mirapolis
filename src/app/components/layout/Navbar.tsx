@@ -90,6 +90,7 @@ export default function Navbar() {
           className={`lg:hidden group ${
             openMenu ? "bg-brand-dark-blue" : ""
           } hover:bg-brand-dark-blue smooth-200 cursor-pointer rounded-lg p-1`}
+          aria-label="Mobile Menu Button"
         >
           <svg
             width="25"
