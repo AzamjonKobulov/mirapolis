@@ -555,8 +555,8 @@ export default function Choose() {
                     </ul>
                     <Button
                       onClick={toggleFreeTrialModal}
-                      variant="white"
-                      className="w-full sm:w-auto"
+                      variant="gradient"
+                      className="w-full sm:w-auto mt-3.5"
                     >
                       Попробовать бесплатно
                     </Button>

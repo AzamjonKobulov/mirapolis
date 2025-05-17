@@ -16,7 +16,7 @@ const clientLogos: ClientLogo[] = Array.from({ length: 66 }, (_, i) => {
     name: `Client ${num}`,
     logo: `/assets/images/client_logo-${formattedNum}.svg`,
   };
-});
+}).filter((logo) => logo.id !== 3);
 
 export default function ClientSlider() {
   // Create distinct sets of logos for each row
