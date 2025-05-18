@@ -117,6 +117,7 @@ export default function Navbar() {
             <Button
               variant="white"
               className="!text-sm/4 !rounded-lg shadow !py-2.5 !px-4.5"
+              onClick={toggleFreeTrialModal}
             >
               Попробовать
             </Button>
