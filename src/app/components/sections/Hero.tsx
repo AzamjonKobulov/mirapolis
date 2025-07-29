@@ -58,7 +58,7 @@ export default function Hero() {
           {/* Banner & Features */}
           <div className="hidden xs:block max-w-base mx-auto relative -bottom-10 lg:px-3.5">
             {/* Banner Image */}
-            <div className="aspect-video lg:aspect-auto md:max-w-xl lg:max-w-3xl xl:max-w-[920px] lg:h-[489px] mx-auto border border-white/45 bg-white/40 backdrop-blur-[32px] rounded-xl lg:rounded-[20px] p-1 lg:p-2">
+            <div className="md:max-w-xl lg:max-w-3xl xl:max-w-[920px] lg:h-[489px] mx-auto border border-white/45 bg-white/40 backdrop-blur-[32px] rounded-xl lg:rounded-[20px] p-1 lg:p-2">
               <div className="size-full shadow-banner rounded-[10.5008px] lg:rounded-[14px] overflow-hidden">
                 <Image
                   src="/assets/images/banner.png"
@@ -147,7 +147,7 @@ export default function Hero() {
       {/* Banner & Features Mobile */}
       <div className="xs:hidden max-w-base mx-auto relative -bottom-5 lg:px-3.5">
         {/* Banner Image */}
-        <div className="aspect-video lg:aspect-auto md:max-w-xl lg:max-w-3xl xl:max-w-[920px] lg:h-[489px] mx-auto border border-white/45 bg-white/40 backdrop-blur-[32px] rounded-xl lg:rounded-[20px] p-1 ">
+        <div className="md:max-w-xl lg:max-w-3xl xl:max-w-[920px] lg:h-[489px] mx-auto border border-white/45 bg-white/40 backdrop-blur-[32px] rounded-xl lg:rounded-[20px] p-1 ">
           <div className="size-full shadow-banner rounded-[10.5008px] lg:rounded-[14px] overflow-hidden">
             <Image
               src="/assets/images/banner.png"

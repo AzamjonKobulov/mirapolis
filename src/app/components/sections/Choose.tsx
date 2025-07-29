@@ -485,19 +485,13 @@ export default function Choose() {
                 </div>
 
                 <div className="lg:w-1/2 my-auto py-4 px-5">
-                  <div
-                    className={`relative my-auto min-h-55 ${
-                      activeTabContent.id === 7 || activeTabContent.id === 10
-                        ? "sm:h-140"
-                        : "sm:h-108"
-                    } rounded-xl overflow-hidden`}
-                  >
+                  <div className="relative my-auto min-h-55  rounded-xl overflow-hidden">
                     <Image
                       src={activeTabContent.img}
                       alt={activeTabContent.title}
                       width={4000}
                       height={2400}
-                      className="size-full xs:aspect-video lg:aspect-auto my-auto"
+                      className="size-full xs:aspect-[5/4] lg:aspect-auto my-auto"
                     />
                   </div>
                 </div>
