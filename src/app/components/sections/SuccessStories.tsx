@@ -182,7 +182,7 @@ export default function SuccessStories() {
 
                     {/* Client's Personal Info */}
                     <div className="flex items-center gap-3 pt-2.5 sm:pt-0">
-                      <div className="size-15 shrink rounded-full overflow-hidden">
+                      <div className="size-15 shrink rounded-lg overflow-hidden">
                         <Image
                           src={client.clientImage}
                           alt={client.clientName}
@@ -191,7 +191,7 @@ export default function SuccessStories() {
                           className="size-full object-cover"
                         />
                       </div>
-                      <div className="space-y-1 text-brand-dark-blue">
+                      <div className="space-y-1 font-noto text-brand-dark-blue">
                         <p className="font-bold text-sm/6 sm:text-xl/6">
                           {client.clientName}
                         </p>
@@ -204,11 +204,11 @@ export default function SuccessStories() {
                 </div>
 
                 {/* Right - Client's Stats */}
-                <div className="bg-success-story flex-1 space-y-4 font-light text-white divide-y divide-white/15 rounded-b-2xl sm:rounded-r-[1.25rem] -mt-5 lg:mt-0 lg:-ml-8 px-3.5 pb-5 pt-10 sm:pt-12 lg:pt-8 lg:pl-16 sm:px-8 sm:py-8">
+                <div className="bg-brand-blue flex-1 space-y-4 font-light text-white divide-y divide-white/15 rounded-b-2xl sm:rounded-r-[1.25rem] -mt-5 lg:mt-0 lg:-ml-8 px-3.5 pb-5 pt-10 sm:pt-12 lg:pt-8 lg:pl-16 sm:px-8 sm:py-8">
                   {client.stats.map((stat) => (
                     <div
                       key={stat.title}
-                      className="space-y-1.5 sm:space-y-3 pb-4"
+                      className="font-noto space-y-1.5 sm:space-y-3 pb-4"
                     >
                       <p className="font-normal sm:font-light text-xl/6 sm:text-[40px]/10">
                         {stat.title}

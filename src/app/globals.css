@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 @import "tailwindcss";
 
 @theme {
@@ -11,11 +13,13 @@
 
   --max-width-base: 77.75rem;
 
-  --font-roboto: var(--font-roboto);
+  --font-roboto: "Roboto", sans-serif;
+  --font-noto: "Noto Sans", sans-serif;
 
   --color-brand-dark-blue: #000f27;
   --color-brand-dark-blue-100: #001537cc;
   --color-brand-dark-blue-200: #282828;
+  --color-brand-blue: #1452e3;
   --color-brand-gray: #f1f0fc;
   --color-brand-purple: #763edb;
   --color-brand-gray-light: #f0f2fc;
@@ -25,11 +29,6 @@
 
   --background-image-btn: linear-gradient(302.62deg, #763edb 0%, #0058e6 100%);
   --background-image-nav: blur(40px), 4px 4px 12px 0px #ffffff1f inset;
-  --background-image-mob-app: linear-gradient(
-    6.31deg,
-    #0058e6 4.82%,
-    #763edb 94.79%
-  );
   --background-image-hero: linear-gradient(
     302.62deg,
     #763edb 32.04%,
@@ -37,13 +36,26 @@
   );
   --background-image-reliable: linear-gradient(
     271.05deg,
-    #0058e6 0%,
-    #763edb 100%
+    #7719d9 0%,
+    #cc02d2 45.19%,
+    #0058f6 100%
   );
+  --background-image-mirapolis-in-numbers: linear-gradient(
+    271.05deg,
+    #cc02d2 0%,
+    #0058f6 100%
+  );
+
   --background-image-success-story: linear-gradient(
     6.31deg,
     #0058e6 4.82%,
     #763edb 94.79%
+  );
+  --background-image-mob-app: linear-gradient(
+    352.79deg,
+    #0257e6 8.08%,
+    #cc02d2 50.17%,
+    #7719d9 92.26%
   );
 
   --background-image-hero-img: "url('/assets/images/bg-hero.png')";

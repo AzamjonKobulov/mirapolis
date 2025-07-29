@@ -8,7 +8,7 @@ export default function Stats() {
         <h2>Мираполис в цифрах</h2>
 
         {/* Stats */}
-        <div className="bg-reliable grid sm:grid-cols-3 rounded-[17.5px] lg:rounded-[20px] p-3.5 lg:p-4">
+        <div className="bg-mirapolis-in-numbers grid sm:grid-cols-3 rounded-[17.5px] lg:rounded-[20px] p-3.5 lg:p-4">
           {/* Stat 1 */}
           <div className="space-y-2.5 lg:space-y-3 text-center text-white p-4.5 lg:p-5">
             <p className="text-[66px]/[60px] lg:text-[76px]/[60px] font-bold">

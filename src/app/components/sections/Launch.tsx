@@ -8,7 +8,7 @@ export default function Launch() {
   return (
     <section
       id="launch"
-      className="relative z-10 bg-white rounded-3xl lg:rounded-[4rem] -mt-10 lg:-mt-16 py-8 sm:py-28 lg:py-32"
+      className="relative z-10 bg-brand-gray rounded-3xl lg:rounded-[4rem] -mt-10 lg:-mt-16 py-8 sm:py-28 lg:py-32"
     >
       <div className="max-w-base mx-auto flex-between flex-col lg:flex-row gap-10 px-3.5">
         {/* Left - Image */}
