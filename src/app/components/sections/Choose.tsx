@@ -495,8 +495,9 @@ export default function Choose() {
                     <Image
                       src={activeTabContent.img}
                       alt={activeTabContent.title}
-                      fill
-                      className="size-full my-auto object-cover object-top-left"
+                      width={4000}
+                      height={2400}
+                      className="size-full xs:aspect-video lg:aspect-auto my-auto"
                     />
                   </div>
                 </div>
@@ -534,18 +535,13 @@ export default function Choose() {
                     isActive ? "max-h-[1000px]" : "max-h-0"
                   }`}
                 >
-                  <div
-                    className={`relative ${
-                      tab.id === 7 || tab.id === 10
-                        ? "min-h-68 xxs:min-h-85 xs:min-h-110"
-                        : "min-h-55 xxs:min-h-80 xs:min-h-100"
-                    }  border border-brand-gray rounded-lg mb-4`}
-                  >
+                  <div className="relative border border-brand-gray rounded-lg mb-4">
                     <Image
                       src={tab.img}
                       alt={`${tab.label} Screenshots`}
-                      fill
-                      className="size-full object-cover object-top-left"
+                      width={2000}
+                      height={1200}
+                      className="size-full"
                     />
                   </div>
                   <div className="px-3.5 pt-3.5 pb-5">
