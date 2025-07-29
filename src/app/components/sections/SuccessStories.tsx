@@ -191,7 +191,7 @@ export default function SuccessStories() {
                           className="size-full object-cover"
                         />
                       </div>
-                      <div className="space-y-1 font-noto text-brand-dark-blue">
+                      <div className="space-y-1 font-halvetica text-brand-dark-blue">
                         <p className="font-bold text-sm/6 sm:text-xl/6">
                           {client.clientName}
                         </p>
@@ -208,7 +208,7 @@ export default function SuccessStories() {
                   {client.stats.map((stat) => (
                     <div
                       key={stat.title}
-                      className="font-noto space-y-1.5 sm:space-y-3 pb-4"
+                      className="font-halvetica space-y-1.5 sm:space-y-3 pb-4"
                     >
                       <p className="font-normal sm:font-light text-xl/6 sm:text-[40px]/10">
                         {stat.title}

@@ -1,5 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
+@font-face {
+  font-family: "Helvetica";
+  src: url("/public/assets/fonts/halvetica//Helvetica-Light.eot");
+  src: url("/public/assets/fonts/halvetica//Helvetica-Light.eot?#iefix")
+      format("embedded-opentype"),
+    url("/public/assets/fonts/halvetica//Helvetica-Light.eot.woff2")
+      format("woff2"),
+    url("/public/assets/fonts/halvetica//Helvetica-Light.eot.woff")
+      format("woff"),
+    url("/public/assets/fonts/halvetica//Helvetica-Light.eot.ttf")
+      format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import "tailwindcss";
 
 @theme {
@@ -14,7 +30,7 @@
   --max-width-base: 77.75rem;
 
   --font-roboto: "Roboto", sans-serif;
-  --font-noto: "Noto Sans", sans-serif;
+  --font-halvetica: "Halvetica", sans-serif;
 
   --color-brand-dark-blue: #000f27;
   --color-brand-dark-blue-100: #001537cc;
