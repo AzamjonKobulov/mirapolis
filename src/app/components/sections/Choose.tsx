@@ -468,8 +468,8 @@ export default function Choose() {
 
           <div className="md:px-20 lg:px-0">
             {activeTabContent && (
-              <div className="bg-white rounded-3xl overflow-hidden flex flex-col lg:flex-row mt-8 lg:mt-10">
-                <div className="lg:w-1/2 space-y-7 p-8">
+              <div className=" bg-hero rounded-3xl overflow-hidden flex flex-col lg:flex-row mt-8 lg:mt-10">
+                <div className="lg:w-1/2 bg-white space-y-7 p-8">
                   <h5>{activeTabContent.title}</h5>
                   <ul className="text-xl font-light">
                     {activeTabContent.features.map((text, i) => (
@@ -484,9 +484,9 @@ export default function Choose() {
                   </Button>
                 </div>
 
-                <div className="lg:w-1/2 bg-hero py-4 px-5">
+                <div className="lg:w-1/2 my-auto py-4 px-5">
                   <div
-                    className={`relative min-h-55  ${
+                    className={`relative my-auto min-h-55 ${
                       activeTabContent.id === 7 || activeTabContent.id === 10
                         ? "sm:h-140"
                         : "sm:h-108"
@@ -496,7 +496,7 @@ export default function Choose() {
                       src={activeTabContent.img}
                       alt={activeTabContent.title}
                       fill
-                      className="size-full object-cover object-top-left"
+                      className="size-full my-auto object-cover object-top-left"
                     />
                   </div>
                 </div>
