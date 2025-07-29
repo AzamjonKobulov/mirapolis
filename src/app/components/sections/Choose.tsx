@@ -14,7 +14,7 @@ type Tab = {
   label: string;
   title: string;
   features: string[];
-  images: string[];
+  img: string;
 };
 
 const tabs: Tab[] = [
@@ -49,7 +49,7 @@ const tabs: Tab[] = [
       "Личный кабинеты рекрутеров, руководителей подбора, согласующих, заказчиков",
       "Аналитика и воронки подбора",
     ],
-    images: ["/assets/images/choose-1.jpg", "/assets/images/choose-2.jpg"],
+    img: "/assets/images/choose-1.jpg",
   },
   {
     id: 2,
@@ -93,7 +93,7 @@ const tabs: Tab[] = [
       "Аналитика и отчетность",
       "Оценка прохождения этапов и всего плана",
     ],
-    images: ["/assets/images/choose-1.jpg", "/assets/images/choose-2.jpg"],
+    img: "/assets/images/choose-2.jpg",
   },
   {
     id: 3,
@@ -122,7 +122,7 @@ const tabs: Tab[] = [
       "Мобильный доступ 24/7 из любой точки мира",
       "Расширенная аналитика",
     ],
-    images: ["/assets/images/choose-1.jpg", "/assets/images/choose-2.jpg"],
+    img: "/assets/images/choose-3.jpg",
   },
   {
     id: 4,
@@ -152,7 +152,7 @@ const tabs: Tab[] = [
       "Персональные и групповые отчеты по результатам оценки",
       "Наглядная аналитика в разрезе сотрудников, отделов и организации в целом",
     ],
-    images: ["/assets/images/choose-1.jpg", "/assets/images/choose-2.jpg"],
+    img: "/assets/images/choose-4.jpg",
   },
   {
     id: 5,
@@ -187,7 +187,7 @@ const tabs: Tab[] = [
       "Использование результатов оценки для премирования сотрудников",
       "Наглядная аналитика с ключевыми метриками с возможностью экспорта в удобных форматах",
     ],
-    images: ["/assets/images/choose-1.jpg", "/assets/images/choose-2.jpg"],
+    img: "/assets/images/choose-5.jpg",
   },
   {
     id: 6,
@@ -220,7 +220,7 @@ const tabs: Tab[] = [
       "Назначение наставников на весь план или его отдельные активности",
       "Связь планов развития с результатами оценки сотрудника и карьерными треками",
     ],
-    images: ["/assets/images/choose-1.jpg", "/assets/images/choose-2.jpg"],
+    img: "/assets/images/choose-6.jpg",
   },
   {
     id: 7,
@@ -260,7 +260,7 @@ const tabs: Tab[] = [
       "Сервис “Спасибо”",
       "Возможность тратить полученные баллы и игровые валюты в магазине подарков",
     ],
-    images: ["/assets/images/choose-1.jpg", "/assets/images/choose-2.jpg"],
+    img: "/assets/images/choose-7.jpg",
   },
   {
     id: 8,
@@ -287,7 +287,7 @@ const tabs: Tab[] = [
       "Возможности выгрузки данных в корпоративные BI-системы",
       "Возможность отправки отчетности на почту по расписанию",
     ],
-    images: ["/assets/images/choose-1.jpg", "/assets/images/choose-2.jpg"],
+    img: "/assets/images/choose-1.jpg",
   },
   {
     id: 9,
@@ -320,7 +320,7 @@ const tabs: Tab[] = [
       "Персонализация контента",
       "Избранное, рекомендации, рейтинги материалов, комментарии и обсуждения, форум",
     ],
-    images: ["/assets/images/choose-1.jpg", "/assets/images/choose-2.jpg"],
+    img: "/assets/images/choose-9.jpg",
   },
   {
     id: 10,
@@ -352,7 +352,7 @@ const tabs: Tab[] = [
       "Контроль сроков исполнения и уведомления для сотрудников ",
       "Интеграция с внутренними системами компании (1С, SAP, Jira, Naumen и др.)",
     ],
-    images: ["/assets/images/choose-1.jpg", "/assets/images/choose-2.jpg"],
+    img: "/assets/images/choose-10.jpg",
   },
   {
     id: 11,
@@ -389,7 +389,7 @@ const tabs: Tab[] = [
       "Отчеты по выполнению задач и динамике исполнения",
       "Индикация назначенных и просроченных задач",
     ],
-    images: ["/assets/images/choose-1.jpg", "/assets/images/choose-2.jpg"],
+    img: "/assets/images/choose-11.jpg",
   },
 ];
 
@@ -430,7 +430,7 @@ export default function Choose() {
         <h2>Выбирайте только нужное</h2>
 
         {/* Desktop Tabs */}
-        <div className="hidden md:block">
+        <div className="hidden sm:block">
           <div className="flex flex-wrap justify-center gap-3 mb-3">
             {tabs.slice(0, 6).map((tab) => (
               <Button
@@ -466,48 +466,47 @@ export default function Choose() {
             ))}
           </div>
 
-          {activeTabContent && (
-            <div className="bg-white rounded-3xl p-4 flex flex-col lg:flex-row mt-8 lg:mt-10">
-              <div className="lg:w-1/2 space-y-7 p-4">
-                <h5>{activeTabContent.title}</h5>
-                <ul className="text-xl font-light">
-                  {activeTabContent.features.map((text, i) => (
-                    <li key={i} className="flex items-start pl-2">
-                      <span className="mr-2 mt-1.5">•</span>
-                      <span>{text}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Button onClick={toggleFreeTrialModal} variant="gradient">
-                  Попробовать бесплатно
-                </Button>
-              </div>
+          <div className="md:px-20 lg:px-0">
+            {activeTabContent && (
+              <div className="bg-white rounded-3xl overflow-hidden flex flex-col lg:flex-row mt-8 lg:mt-10">
+                <div className="lg:w-1/2 space-y-7 p-8">
+                  <h5>{activeTabContent.title}</h5>
+                  <ul className="text-xl font-light">
+                    {activeTabContent.features.map((text, i) => (
+                      <li key={i} className="flex items-start pl-2">
+                        <span className="mr-2 mt-1.5">•</span>
+                        <span>{text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button onClick={toggleFreeTrialModal} variant="gradient">
+                    Попробовать бесплатно
+                  </Button>
+                </div>
 
-              <div className="lg:w-1/2 lg:mt-0">
-                <div className="relative size-full flex flex-col gap-4">
-                  {activeTabContent.images.map((src, idx) => (
-                    <div
-                      key={idx}
-                      className={`relative w-full h-full min-h-72 border border-brand-gray rounded-lg overflow-hidden ${
-                        idx === 1 ? "hidden md:block" : "block"
-                      }`}
-                    >
-                      <Image
-                        src={src}
-                        alt={`Screenshot ${idx + 1}`}
-                        fill
-                        className="object-fill"
-                      />
-                    </div>
-                  ))}
+                <div className="lg:w-1/2 bg-hero py-4 px-5">
+                  <div
+                    className={`relative min-h-55  ${
+                      activeTabContent.id === 7 || activeTabContent.id === 10
+                        ? "sm:h-140"
+                        : "sm:h-108"
+                    } rounded-xl overflow-hidden`}
+                  >
+                    <Image
+                      src={activeTabContent.img}
+                      alt={activeTabContent.title}
+                      fill
+                      className="size-full object-cover object-top-left"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
 
         {/* Mobile Accordion */}
-        <div className="md:hidden space-y-3.5">
+        <div className="sm:hidden space-y-3.5">
           {tabs.map((tab) => {
             const isActive = activeTab === tab.id;
             return (
@@ -535,12 +534,18 @@ export default function Choose() {
                     isActive ? "max-h-[1000px]" : "max-h-0"
                   }`}
                 >
-                  <div className="relative w-full aspect-video border border-brand-gray rounded-lg mb-4">
+                  <div
+                    className={`relative ${
+                      tab.id === 7 || tab.id === 10
+                        ? "min-h-68 xxs:min-h-85 xs:min-h-110"
+                        : "min-h-55 xxs:min-h-80 xs:min-h-100"
+                    }  border border-brand-gray rounded-lg mb-4`}
+                  >
                     <Image
-                      src={tab.images[0]}
+                      src={tab.img}
                       alt={`${tab.label} Screenshots`}
                       fill
-                      className="size-full"
+                      className="size-full object-cover object-top-left"
                     />
                   </div>
                   <div className="px-3.5 pt-3.5 pb-5">

@@ -7,7 +7,7 @@ export default function SuccessModal() {
 
   return (
     <div className="fixed inset-0 z-50 bg-brand-dark-blue/40 flex-center xs:overflow-auto xs:pb-20 xs:pt-96 2xl:pt-20 px-3.5">
-      <div className="relative flex items-center gap-3 bg-brand-purple-light rounded-xl p-3">
+      <div className="relative flex items-center gap-3 bg-brand-gray-light rounded-xl p-3">
         <Image
           src="/assets/images/success.png"
           alt="success image"

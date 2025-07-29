@@ -18,21 +18,22 @@
   --color-brand-dark-blue-200: #282828;
   --color-brand-gray: #f1f0fc;
   --color-brand-purple: #763edb;
-  --color-brand-purple-light: #f0f2fc;
+  --color-brand-gray-light: #f0f2fc;
+  --color-brand-gray-light-2: #f0f1f3;
   --color-brand-dark-gray: #282828;
   --color-brand-red: #e80000;
 
   --background-image-btn: linear-gradient(302.62deg, #763edb 0%, #0058e6 100%);
   --background-image-nav: blur(40px), 4px 4px 12px 0px #ffffff1f inset;
-  --background-image-hero: linear-gradient(
-    302.62deg,
-    #763edb 32.04%,
-    #0058e6 100%
-  );
   --background-image-mob-app: linear-gradient(
     6.31deg,
     #0058e6 4.82%,
     #763edb 94.79%
+  );
+  --background-image-hero: linear-gradient(
+    302.62deg,
+    #763edb 32.04%,
+    #0058e6 100%
   );
   --background-image-reliable: linear-gradient(
     271.05deg,
@@ -44,6 +45,8 @@
     #0058e6 4.82%,
     #763edb 94.79%
   );
+
+  --background-image-hero-img: "url('/assets/images/bg-hero.png')";
 
   --shadow-tab: inset 4px 4px 8px 0px #ffffff0a,
     inset -4px -4px 8px 0px #ffffff0a;
@@ -70,19 +73,19 @@
   }
 
   h2 {
-    @apply text-center text-white text-[40px]/[44px] lg:text-6xl/[60px];
+    @apply text-center text-white text-[2.5rem]/11 lg:text-6xl/15 tracking-tighter;
   }
 
   h3 {
-    @apply text-2xl/7 lg:text-[32px]/9;
+    @apply text-2xl/7 lg:text-[32px]/9 tracking-tighter;
   }
 
   h4 {
-    @apply text-2xl/6 lg:text-[32px]/9;
+    @apply text-2xl/6 lg:text-[32px]/9 tracking-tighter;
   }
 
   h5 {
-    @apply text-xl/6 lg:text-[28px]/9;
+    @apply text-xl/6 lg:text-[28px]/9 tracking-tighter;
   }
 
   section {
