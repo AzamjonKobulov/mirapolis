@@ -36,8 +36,82 @@ export default function Hero() {
               Единая экосистема HR-сервисов
             </h1>
             <h3 className="opacity-80 mt-3">Забота об HR в каждом клике</h3>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-3 text-[13px]/4 lg:text-lg/5 tracking-tight mt-7">
+              <div className="flex items-center gap-1">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="size-4 lg:size-auto"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M10 20C9.98 14.4839 5.51055 10.0185 0 10.0185C5.52284 10.0185 10 5.53303 10 0C10.0199 5.51606 14.4894 9.98147 20 9.98147C14.4771 9.98147 10 14.467 10 20Z"
+                    fill="white"
+                  />
+                </svg>
+                1500+ клиентов
+              </div>
+              <div className="flex items-center gap-1">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="size-4 lg:size-auto"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M10 20C9.98 14.4839 5.51055 10.0185 0 10.0185C5.52284 10.0185 10 5.53303 10 0C10.0199 5.51606 14.4894 9.98147 20 9.98147C14.4771 9.98147 10 14.467 10 20Z"
+                    fill="white"
+                  />
+                </svg>
+                AI-навигация
+              </div>
+              <div className="flex items-center gap-1">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="size-4 lg:size-auto"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M10 20C9.98 14.4839 5.51055 10.0185 0 10.0185C5.52284 10.0185 10 5.53303 10 0C10.0199 5.51606 14.4894 9.98147 20 9.98147C14.4771 9.98147 10 14.467 10 20Z"
+                    fill="white"
+                  />
+                </svg>
+                Доступно на мобильном
+              </div>
+              <div className="flex items-center gap-1">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="size-4 lg:size-auto"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M10 20C9.98 14.4839 5.51055 10.0185 0 10.0185C5.52284 10.0185 10 5.53303 10 0C10.0199 5.51606 14.4894 9.98147 20 9.98147C14.4771 9.98147 10 14.467 10 20Z"
+                    fill="white"
+                  />
+                </svg>
+                Соответствует 152-ФЗ
+              </div>
+            </div>
             {/* Buttons */}
-            <div className="flex-center flex-col xs:flex-row gap-3.5 mt-8">
+            <div className="flex-center flex-col xs:flex-row gap-3.5 mt-7">
               <Button
                 onClick={toggleFreeTrialModal}
                 variant="white"
@@ -67,164 +141,6 @@ export default function Hero() {
                   height={1272}
                   className="size-full lg:object-cover object-top"
                 />
-              </div>
-            </div>
-
-            {/* Features */}
-            <div className="lg:absolute inset-0 lg:size-full grid xs:grid-cols-2 -mt-3 xs:-mt-9 lg:mt-0 xs:pt-5 lg:pt-0 px-2">
-              {/* Feature 1 */}
-              <div className="md:absolute top-4 left-0 md:max-w-[125px] sm:h-20 md:h-auto bg-white/80 lg:bg-white/70 backdrop-blur-[32px] rounded-2xl lg:rounded-xl shadow-feature -mt-1.5 lg:-mt-0">
-                <div className="size-full flex md:flex-col items-center border border-white/75   rounded-2xl lg:rounded-xl overflow-hidden">
-                  <Image
-                    src="/assets/images/feature-1.png"
-                    alt="Image"
-                    width={550}
-                    height={420}
-                    className="size-[60px] sm:size-20 md:size-auto object-cover rounded-[10px] lg:rounded-xl"
-                  />
-
-                  <div className="flex md:flex-col gap-1 lg:space-y-1 text-xs lg:text-sm md:text-center leading-3 lg:leading-4 px-3.5 lg:px-2 py-2">
-                    <p className="font-bold text-transparent bg-clip-text bg-btn">
-                      Более 1500
-                    </p>
-                    <p>довольных клиентов</p>
-                  </div>
-                </div>
-              </div>
-              {/* Feature 2 */}
-              <div className="order-4 xs:order-2 md:absolute -bottom-24 lg:-bottom-10 left-20 md:max-w-32 lg:max-w-[161px] sm:h-20 md:h-auto bg-white/80 lg:bg-white/70 backdrop-blur-[32px] rounded-2xl lg:rounded-xl shadow-feature -mt-1.5 lg:-mt-0">
-                <div className="size-full flex md:flex-col items-center border border-white/75 rounded-2xl lg:rounded-xl overflow-hidden">
-                  <Image
-                    src="/assets/images/feature-2.png"
-                    alt="Image"
-                    width={550}
-                    height={420}
-                    className="size-[60px] sm:size-20 md:w-32 md:h-28 lg:w-40 lg:h-[140px] object-cover rounded-[10px] lg:rounded-xl"
-                  />
-
-                  <div className="flex lg:flex-col gap-1 space-y-1 text-xs lg:text-sm md:text-center  leading-3 lg:leading-4 px-3.5 md:px-2 py-2">
-                    <p>Защита персональных данных, соответствие 152-ФЗ</p>
-                  </div>
-                </div>
-              </div>
-              {/* Feature 3 */}
-              <div className="order-3 xs:order-2 md:absolute bottom-5 right-20 md:size-36 lg:size-[172px] sm:h-20 md:h-auto bg-white/80 lg:bg-white/70 backdrop-blur-[32px] rounded-2xl lg:rounded-xl shadow-feature -mt-1.5 lg:-mt-0">
-                <div className="size-full flex md:flex-col items-center border border-white/75   rounded-2xl lg:rounded-xl overflow-hidden">
-                  <Image
-                    src="/assets/images/feature-3.png"
-                    alt="Image"
-                    width={550}
-                    height={420}
-                    className="size-[60px] sm:size-20 md:w-[172px] md:h-[136px] object-cover rounded-[10px] lg:rounded-xl "
-                  />
-
-                  <div className="flex lg:flex-col gap-1 space-y-1 text-xs lg:text-base md:text-center  leading-3 lg:leading-4 px-3.5 lg:px-1 py-2">
-                    <p>Умная AI-навигация</p>
-                  </div>
-                </div>
-              </div>
-              {/* Feature 4 */}
-              <div className="order-2 xs:order-4 md:absolute -top-20 right-0 md:size-[125px] sm:h-20 md:h-auto bg-white/80 lg:bg-white/70 backdrop-blur-[32px] rounded-2xl lg:rounded-xl shadow-feature -mt-1.5 lg:-mt-0">
-                <div className="size-full flex md:flex-col items-center border border-white/75   rounded-2xl lg:rounded-xl overflow-hidden">
-                  <Image
-                    src="/assets/images/feature-4.png"
-                    alt="Image"
-                    width={550}
-                    height={420}
-                    className="size-[60px] sm:size-20 md:size-[125px] object-cover rounded-[10px] lg:rounded-xl"
-                  />
-
-                  <div className="flex lg:flex-col gap-1 space-y-1 text-xs lg:text-sm md:text-center  leading-3 lg:leading-4 px-3.5 lg:px-1 py-2">
-                    <p>Доступно с мобильного</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Banner & Features Mobile */}
-      <div className="xs:hidden max-w-base mx-auto relative -bottom-5 lg:px-3.5">
-        {/* Banner Image */}
-        <div className="md:max-w-xl lg:max-w-3xl xl:max-w-[920px] lg:h-[489px] mx-auto border border-white/45 bg-white/40 backdrop-blur-[32px] rounded-xl lg:rounded-[20px] p-1 ">
-          <div className="size-full shadow-banner rounded-[10.5008px] lg:rounded-[14px] overflow-hidden">
-            <Image
-              src="/assets/images/banner.png"
-              alt="Application"
-              width={2560}
-              height={1272}
-              className="size-full object-cover object-top-left"
-            />
-          </div>
-        </div>
-
-        {/* Features */}
-        <div className="lg:absolute inset-0 lg:size-full grid xs:grid-cols-2 -mt-3 xs:-mt-9 lg:mt-0 xs:pt-5 lg:pt-0 px-2">
-          {/* Feature 1 */}
-          <div className="md:absolute top-4 left-0 md:max-w-[125px] sm:h-20 md:h-auto bg-white/80 lg:bg-white/70 backdrop-blur-[32px] rounded-2xl lg:rounded-xl shadow-feature -mt-1.5 lg:-mt-0">
-            <div className="size-full flex md:flex-col items-center border border-white/75   rounded-2xl lg:rounded-xl overflow-hidden">
-              <Image
-                src="/assets/images/feature-1.png"
-                alt="Image"
-                width={550}
-                height={420}
-                className="size-[60px] sm:size-20 md:size-auto object-cover rounded-[10px] lg:rounded-xl"
-              />
-
-              <div className="flex md:flex-col gap-1 lg:space-y-1 text-xs lg:text-sm md:text-center leading-3 lg:leading-4 px-3.5 lg:px-2 py-2">
-                <p className="font-bold text-transparent bg-clip-text bg-btn">
-                  Более 1500
-                </p>
-                <p>довольных клиентов</p>
-              </div>
-            </div>
-          </div>
-          {/* Feature 2 */}
-          <div className="order-4 xs:order-2 md:absolute -bottom-24 lg:-bottom-10 left-20 md:max-w-32 lg:max-w-[161px] sm:h-20 md:h-auto bg-white/80 lg:bg-white/70 backdrop-blur-[32px] rounded-2xl lg:rounded-xl shadow-feature -mt-1.5 lg:-mt-0">
-            <div className="size-full flex md:flex-col items-center border border-white/75 rounded-2xl lg:rounded-xl overflow-hidden">
-              <Image
-                src="/assets/images/feature-2.png"
-                alt="Image"
-                width={550}
-                height={420}
-                className="size-[60px] sm:size-20 md:w-32 md:h-28 lg:w-40 lg:h-[140px] object-cover rounded-[10px] lg:rounded-xl"
-              />
-
-              <div className="flex lg:flex-col gap-1 space-y-1 text-xs lg:text-sm md:text-center  leading-3 lg:leading-4 px-3.5 md:px-2 py-2">
-                <p>Защита персональных данных, соответствие 152-ФЗ</p>
-              </div>
-            </div>
-          </div>
-          {/* Feature 3 */}
-          <div className="order-3 xs:order-2 md:absolute bottom-5 right-20 md:size-36 lg:size-[172px] sm:h-20 md:h-auto bg-white/80 lg:bg-white/70 backdrop-blur-[32px] rounded-2xl lg:rounded-xl shadow-feature -mt-1.5 lg:-mt-0">
-            <div className="size-full flex md:flex-col items-center border border-white/75   rounded-2xl lg:rounded-xl overflow-hidden">
-              <Image
-                src="/assets/images/feature-3.png"
-                alt="Image"
-                width={550}
-                height={420}
-                className="size-[60px] sm:size-20 md:w-[172px] md:h-[136px] object-cover rounded-[10px] lg:rounded-xl "
-              />
-
-              <div className="flex lg:flex-col gap-1 space-y-1 text-xs lg:text-base md:text-center  leading-3 lg:leading-4 px-3.5 lg:px-1 py-2">
-                <p>Умная AI-навигация</p>
-              </div>
-            </div>
-          </div>
-          {/* Feature 4 */}
-          <div className="order-2 xs:order-4 md:absolute -top-20 right-0 md:size-[125px] sm:h-20 md:h-auto bg-white/80 lg:bg-white/70 backdrop-blur-[32px] rounded-2xl lg:rounded-xl shadow-feature -mt-1.5 lg:-mt-0">
-            <div className="size-full flex md:flex-col items-center border border-white/75   rounded-2xl lg:rounded-xl overflow-hidden">
-              <Image
-                src="/assets/images/feature-4.png"
-                alt="Image"
-                width={550}
-                height={420}
-                className="size-[60px] sm:size-20 md:size-[125px] object-cover rounded-[10px] lg:rounded-xl"
-              />
-
-              <div className="flex lg:flex-col gap-1 space-y-1 text-xs lg:text-sm md:text-center  leading-3 lg:leading-4 px-3.5 lg:px-1 py-2">
-                <p>Доступно с мобильного</p>
               </div>
             </div>
           </div>
